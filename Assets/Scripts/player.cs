@@ -45,13 +45,10 @@ public class player : MonoBehaviour
     private void FixedUpdate()
     {
 
-        rigidBodyComponent.useGravity = false;
-
         rigidBodyComponent.velocity = new Vector3(horizontalInput * sprintInput, rigidBodyComponent.velocity.y, 0);
 
         if (Physics.OverlapSphere(groundCheckTransform.position, 0.1f, playerMask).Length == 0)
         {
-            rigidBodyComponent.useGravity = true;
             return;
         }
 
